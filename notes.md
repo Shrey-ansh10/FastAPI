@@ -28,7 +28,7 @@ Project Setup Steps:
 create api end points in main
 5. "uvicorn main:app --reload" -> starts the server on local host
 
-# APIs have 4 main Operations:
+# 4 main Operations we do:
 1. Create - to create new records
 2. Read - to retrieve and read data
 3. Update - to change/update data
