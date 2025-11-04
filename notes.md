@@ -54,4 +54,15 @@ e.g. /patient?city=delhi&sort_by=age (not mandatory for all key-value pair to be
 
 
 
+------------------------------------------------------------
+
+## CREATE Operation using PUT method.
+
+- Allow a patient to update his records. 
+
+For this:
+1. We will create a new patient model using pydantic, making the fields as optional, single or multiple fields can be updated, as required.
+
+2. create the PUT endpoint where we accept data from the client. 
+
 
