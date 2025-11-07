@@ -11,4 +11,6 @@ wheels/
 
 patients.json
 
-notes.md
+insurance.csv
+
+model.pkl

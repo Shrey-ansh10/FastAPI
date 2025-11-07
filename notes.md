@@ -60,9 +60,10 @@ e.g. /patient?city=delhi&sort_by=age (not mandatory for all key-value pair to be
 
 - Allow a patient to update his records. 
 
-For this:
-1. We will create a new patient model using pydantic, making the fields as optional, single or multiple fields can be updated, as required.
+    For this:
+    1. We will create a new patient model using pydantic, making the fields as optional, single or multiple fields can be updated, as required.
 
-2. create the PUT endpoint where we accept data from the client. 
+    2. create the PUT endpoint where we accept data from the client and update record of that patient.
 
-
+## DELETE operation using DELETE method
+- Deleting existing records.
