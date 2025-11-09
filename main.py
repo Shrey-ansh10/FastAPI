@@ -76,7 +76,7 @@ class Patient(BaseModel):
     name : Annotated[str, Field(..., description="enter patient name")]
     pitaji_name : Annotated[str, Field(..., description="enter patient's pitaji's name")]
     umar : Annotated[int, Field(..., gt=16, lt=100, description="Enter age")]
-    gender : Annotated[Literal["male", "female", ], Field(...,description="enter the gender of patient.")]
+    gender : Annotated[Literal["male", "female", "others"], Field(...,description="enter the gender of patient.")]
     height : Annotated[float, Field(...,gt=0, lt=3, description="enter height in meters")]
     weight : Annotated[float, Field(...,gt=25, lt=300, description="Weight values must me btw 25 and 300")]
 
@@ -138,7 +138,7 @@ import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# 1. creating a new patient 
+# 1. creating a new patient - because it allows to update one or more fields as need - all fields are optional - unlike the Patient model where all fields are required
 class UpdatePatient(BaseModel):
     name : Annotated[Optional[str], Field(default=None, description="Patient's name")]
     pitaji_name : Annotated[Optional[str], Field(default=None, description="enter patient's pitaji's name")]
@@ -151,7 +151,7 @@ class UpdatePatient(BaseModel):
 # 2. crating update endpoint
 
 @app.put('/edit/{patient_id}')
-def update_patient(patient_update:UpdatePatient, patient_id: str = Path(example="P0001")):
+def update_patient(patient_update: UpdatePatient, patient_id: str = Path(example="P0001")):
 
     logger.info(f"Updating patient {patient_id}")
 
@@ -177,8 +177,8 @@ def update_patient(patient_update:UpdatePatient, patient_id: str = Path(example=
 
         logger.info(f"Successfully updated patient {existing_patient_info}")
 
-        # now that we have updated patient info, we need to write logic to update BMI as it won't happen automatically
 
+        # now that we have updated patient info, we need to write logic to update BMI as it won't happen automatically
         temp_patient_obj = Patient(**existing_patient_info) #this patient object has BMI
 
         #converting patient object back to dict and execluding id
@@ -191,6 +191,7 @@ def update_patient(patient_update:UpdatePatient, patient_id: str = Path(example=
         logger.info(f"Successfully updated patient {patient_id}")
 
         return JSONResponse(status_code=200, content={"message":"Record updated", "patient": existing_patient_info}) # return success message
+
 
     except json.JSONDecodeError:
         raise HTTPException(status_code=500, detail="Error reading database")

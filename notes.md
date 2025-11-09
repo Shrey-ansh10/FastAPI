@@ -56,7 +56,7 @@ e.g. /patient?city=delhi&sort_by=age (not mandatory for all key-value pair to be
 
 ------------------------------------------------------------
 
-## CREATE Operation using PUT method.
+### 2. CREATE Operation using POST method.
 
 - Allow a patient to update his records. 
 
@@ -65,5 +65,14 @@ e.g. /patient?city=delhi&sort_by=age (not mandatory for all key-value pair to be
 
     2. create the PUT endpoint where we accept data from the client and update record of that patient.
 
-## DELETE operation using DELETE method
+### 3. UPDATE operation using PUT method
+- First we created a new pydantic model with optional fields, to update fields as needed.
+- Then we load the model.
+- find the patient whose record need to be updated. 
+- update all records associated with respected fields.
+- using the updated data, create a instance of original Patient model and calculate BMI.
+- now update the database with this data in which BMI is also included.
+
+### 4. DELETE operation using DELETE method
 - Deleting existing records.
+ 

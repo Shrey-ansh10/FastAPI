@@ -1,4 +1,4 @@
-# creating a endpoint to expose the ML model using FastAPI
+# creating a API to expose the ML model using FastAPI.
 # based on the input parameters the model will predict if the insurance price for the specific user will be High, Low or Medium
 
 from fastapi import FastAPI
