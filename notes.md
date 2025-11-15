@@ -29,10 +29,10 @@ create api end points in main
 5. "uvicorn main:app --reload" -> starts the server on local host
 
 # 4 main Operations we do:
-1. Create - to create new records
-2. Read - to retrieve and read data
-3. Update - to change/update data
-4. Delete - to delete record/data
+1. Create - to create new records -> POST method
+2. Read - to retrieve and read data -> GET method
+3. Update - to change/update data -> PUT method
+4. Delete - to delete record/data -> DELETE method
 
 ## PATH PARAMETERS:  
 - Parameters that are retrieved from URL and is used to get specific data
@@ -75,4 +75,17 @@ e.g. /patient?city=delhi&sort_by=age (not mandatory for all key-value pair to be
 
 ### 4. DELETE operation using DELETE method
 - Deleting existing records.
- 
+
+
+
+---------
+
+NEXT TO DO in FastAPI:
+- Create 2 Projects
+- See how Authentation works
+- Project Structuring - for better productivity and defining seperation of concern 
+- See how to connect databases and work with them.
+- how to apply rate limiter - where needed
+- how logging works
+- Overview of how async-await works in python projects
+- SQLAlchemy 

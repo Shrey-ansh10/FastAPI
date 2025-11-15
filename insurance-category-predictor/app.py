@@ -2,10 +2,10 @@
 # based on the input parameters the model will predict if the insurance price for the specific user will be High, Low or Medium
 
 from fastapi import FastAPI
-from .schema.user_input import Input
+from schema import Input
 import logging, traceback
 from fastapi.responses import JSONResponse
-from .models.predict import predict, _model, MODEL_VERSION
+from models import predict, _model, MODEL_VERSION
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)

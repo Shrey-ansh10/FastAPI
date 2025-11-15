@@ -1,7 +1,7 @@
 import pickle
 from pathlib import Path
 import logging, traceback
-from ..schema.user_input import Input
+from ..schema import Input
 import pandas as pd
 from fastapi.responses import JSONResponse
 

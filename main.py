@@ -41,7 +41,7 @@ def get_patient(patient_id: str = Path(..., description = "Pass in ID of Patient
     raise HTTPException(status_code=404, detail="patient not found")
 
 
-# sort endpoint and implement query parameters 
+# sort endpoint and implementation Query Parameters 
 @app.get("/sort")
 def sort(sort_by:str = Query(..., description="sort by height, weight, umar"), order:str = Query('asc', description="order of sorting. Set to ascending by default.")):
     
